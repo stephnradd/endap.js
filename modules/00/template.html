@@ -22,13 +22,56 @@
 
 
 <script type=module>
-import { Console as CLI } from "endap"
-const consoles = CLI.create("40px");
+import { Console as CLI } from "endap";
+import { RandNum as RNU } from "endap";
+const consoles = CLI.create("50px");
+const consoles2 = CLI.create("150px");
 
 const cnt = document.getElementById("cnt1");
+const cnta = document.getElementById("cnt2");
 cnt.append(consoles.el);
+cnt.append(consoles2.el);
 
-consoles.ver();
+const min = 10;
+const max = 90;
+const n = 10;
+const x = RNU.randIntN(min, max, n);
+
+consoles.log("x = ", "");
+consoles.log(x);
+
+console.log();
+
+for (let i = 0; i < n; i++){
+	for(let j = i+1; j < n; j++){
+		if (x[i] > x[j]){
+		let tmp = x[i];
+		x[i] = x[j];
+		x[j] = tmp; 
+		}
+	}
+}
+consoles.log("x = ", "");
+consoles.log(x);
+
+function f(x){
+	let c0 = 21.3;
+	let c1 = -10.3;
+	let c2 = 1;
+	let y = c0 + c1*x + c2*x*x;
+	return y;
+}
+const xmin = 2.864720;
+const xmax = 2.864730;
+const dx = 0.0000001;
+const n1 = (xmax - xmin) / dx;
+
+for(let i = 0; i<= n1; i++){
+	let x = xmin + i*dx;
+	let y = f(x);
+	consoles2.log(x.toFixed(8), "\t");
+	consoles2.log(y.toFixed(8));
+}
 </script>
 
 
