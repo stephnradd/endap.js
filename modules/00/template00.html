@@ -32,19 +32,15 @@ consoles.ver();
 </script>
 
 <pre class="mermaid">
-mindmap
-	root((Struktur Aljabar))
-		Pendahuluan
-			Himpunan dan Himpunan Kuasa
-			::icon(fa fa-rectangle-list)
-			Teori Bilangan
-		Grup
-			Operasi Biner
-			Aksioma Grup
-				Subgrup
-				Grup Siklik
-				Grup Permutasi
-	
+flowchart TD
+    Start([START]) --> Step1[Memasukkan 'student ID' untuk mendapatkan seed]
+    Step1 --> Step2[Membuka tautan seed]
+    Step2 --> Step3[Mengamati grafik dan console untuk mendapatkan PEAK, LAST, LINI, dan LINF]
+    Step3 --> Step4[Menghitung nilai m dan b]
+    Step4 --> Step5[Merekap PEAK, LAST, m, b ke tabel]
+    Step5 --> Step6[Membuat scatter plot dari data rekapan]
+    Step6 --> Step7[Membuat analisis dari scatter plot yang dihasilkan]
+    Step7 --> End([END])
 </pre>
 
 
